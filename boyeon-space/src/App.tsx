@@ -1,10 +1,14 @@
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RootRoutes from "./page/RootRoutes";
+import { Outlet } from "react-router-dom";
+import Header from "./component/molecules/Header";
 
 function App() {
-  const router = createBrowserRouter([{ path: "*", Component: RootRoutes }]);
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Header />
+      <Outlet />
+    </>
+  );
 }
 
 export default App;
