@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import Blog from "./blog";
-import Book from "./book";
-import Resume from "./resume";
+import Blog from "./Blog";
+import Book from "./Book";
+import Resume from "./Resume";
 
 const RootRoutes = () => {
   return (
