@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header
       css={{
-        height: "80px",
+        height: "85px",
       }}
     >
       <div
@@ -19,8 +19,8 @@ const Header = () => {
           position: "fixed",
           top: 0,
           width: "100%",
-          height: "80px",
-          borderBottom: `3px solid ${colors.gray3}`,
+          height: "85px",
+          borderBottom: `2px solid ${colors.gray3}`,
           padding: "1rem 2rem",
           boxSizing: "border-box",
         }}
@@ -65,17 +65,17 @@ const Header = () => {
             >
               <li>
                 <Link to={"blog"}>
-                  <Typography variant="h2B">Blog</Typography>
+                  <Typography variant="h1">BLOG</Typography>
                 </Link>
               </li>
               <li>
                 <Link to={"resume"}>
-                  <Typography variant="h2B">Resume</Typography>
+                  <Typography variant="h1">RESUME</Typography>
                 </Link>
               </li>
               <li>
                 <Link to={"book"}>
-                  <Typography variant="h2B">Book</Typography>
+                  <Typography variant="h1">BOOK</Typography>
                 </Link>
               </li>
             </ul>
