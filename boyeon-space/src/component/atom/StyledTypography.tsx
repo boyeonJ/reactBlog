@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
-import { ReactElement } from "react";
-import colors from "./Color";
+import colors from "./foundation/Color";
+import { FoundationProps } from "../../util/type";
+import Typography from "./foundation/Typography";
 
 const sizeStyles = {
   h1: {
@@ -70,8 +71,7 @@ const sizeStyles = {
   },
 };
 
-type Props = {
-  children: ReactElement | string | number;
+type TypographyProps = {
   variant?:
     | "h1"
     | "h2"
@@ -86,26 +86,26 @@ type Props = {
     | "h4B"
     | "h5B"
     | "h6B";
-  color?: "primary" | "gray1" | "gray2" | "black" | "white" | "blue1";
+  color?: "primary1" | "primary2" | "gray1" | "gray2" | "primary3";
 };
 
-const Typography = ({
+const StyledTypography = ({
   children,
+  className,
   variant = "h3",
-  color = "black",
-  ...props
-}: Props) => {
+  color = "primary3",
+}: FoundationProps & TypographyProps) => {
   return (
-    <span
+    <Typography
       css={{
         ...sizeStyles[variant],
         color: colors[color],
-        ...props,
       }}
+      className={className}
     >
       {children}
-    </span>
+    </Typography>
   );
 };
 
-export default Typography;
+export default StyledTypography;

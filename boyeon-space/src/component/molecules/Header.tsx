@@ -1,12 +1,19 @@
 /** @jsxImportSource @emotion/react */
 
-import { maxq, minq } from "../../util/style";
-import colors from "../atom/Color";
+import { useEffect, useState } from "react";
+import { maxq, minq } from "../../util/style.ts";
+import colors from "../atom/foundation/Color.tsx";
 import Icons from "../atom/Icons";
-import Typography from "../atom/Typography";
+import StyledTypography from "../atom/StyledTypography.tsx";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.body.dataset.theme = theme;
+  }, [theme]);
+
   return (
     <header
       css={{
@@ -15,12 +22,12 @@ const Header = () => {
     >
       <div
         css={{
-          backgroundColor: colors.white,
+          backgroundColor: colors.primary1,
           position: "fixed",
           top: 0,
           width: "100%",
           height: "85px",
-          borderBottom: `2px solid ${colors.gray3}`,
+          borderBottom: `2px solid ${colors.gray1}`,
           padding: "1rem 2rem",
           boxSizing: "border-box",
         }}
@@ -44,7 +51,11 @@ const Header = () => {
             }}
           />
 
-          <img src="/src/assets/logo.png" css={{ height: "2rem" }} />
+          <div css={{ display: "flex" }}>
+            <StyledTypography variant="h1B">보연</StyledTypography>
+            <StyledTypography variant="h1">공간</StyledTypography>
+          </div>
+          {/* <img src="/src/assets/logo.png" css={{ height: "2rem" }} /> */}
 
           <nav
             css={{
@@ -65,24 +76,32 @@ const Header = () => {
             >
               <li>
                 <Link to={"blog"}>
-                  <Typography variant="h1">BLOG</Typography>
+                  <StyledTypography variant="h1">BLOG</StyledTypography>
                 </Link>
               </li>
               <li>
                 <Link to={"resume"}>
-                  <Typography variant="h1">RESUME</Typography>
+                  <StyledTypography variant="h1">RESUME</StyledTypography>
                 </Link>
               </li>
               <li>
                 <Link to={"book"}>
-                  <Typography variant="h1">BOOK</Typography>
+                  <StyledTypography variant="h1">BOOK</StyledTypography>
                 </Link>
               </li>
             </ul>
           </nav>
 
           <div className="header-right">
-            <Icons name="clear_night" size="large" />
+            <button
+              css={{
+                backgroundColor: "transparent",
+                borderColor: "transparent",
+              }}
+              onClick={() => setTheme("light" === theme ? "dark" : "light")}
+            >
+              <Icons name="clear_night" size="large" />
+            </button>
           </div>
         </div>
       </div>

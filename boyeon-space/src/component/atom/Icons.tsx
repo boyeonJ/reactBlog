@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import colors from "./foundation/Color";
 
 const iconSizes = {
   large: "2rem",
@@ -31,7 +32,7 @@ const Icons = ({
 }: Props) => {
   return (
     <>
-      <span className={className} css={{ fontSize: iconSizes[size], ...style }}>
+      <span className={className} css={{ fontSize: iconSizes[size], ...style, color:colors.primary3 }}>
         {name}
       </span>
     </>
