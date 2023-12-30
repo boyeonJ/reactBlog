@@ -1,0 +1,60 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
+const defaultTheme = `
+--light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+--dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+--max-width: 1170px;
+--fixed-width: 620px;
+--transition: all 0.3s linear;
+--spacing: 0.1rem;
+--radius: 0.25rem;
+--ff-primary: "Roboto", sans-serif;
+--ff-secondary: "Open Sans", sans-serif;
+`;
+
+const lightTheme = `
+--clr-primary-1: #FFFFFF;
+--clr-primary-2: #FBFBFB;
+--clr-primary-3: #000000;
+--clr-primary-4: ;
+--clr-grey-1: #E9E9EB;
+--clr-grey-2: #A4A4A4;
+`;
+const darkTheme = `
+--clr-primary-1: #000000;
+--clr-primary-2: #101015;
+--clr-primary-3: #FFFFFF;
+--clr-primary-4: ;
+--clr-grey-1: #36363A;
+--clr-grey-2: #919193;
+`;
+
+const reset = css`
+  ::after,
+  ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+    ${lightTheme}
+  }
+  ul {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  body[data-theme='light'] {
+    ${lightTheme};
+  }
+  
+  body[data-theme='dark'] {
+    ${darkTheme};
+  }
+`;
+
+export default reset;
