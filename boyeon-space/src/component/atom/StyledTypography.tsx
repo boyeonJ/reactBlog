@@ -4,6 +4,11 @@ import { ColorType, FoundationProps } from "../../util/type";
 import Typography from "./foundation/Typography";
 
 const sizeStyles = {
+  h0: {
+    fontSize: "40px",
+    lineHeight: "28px",
+    fontWeight: "300",
+  },
   h1: {
     fontSize: "24px",
     lineHeight: "28px",
@@ -73,6 +78,7 @@ const sizeStyles = {
 
 type TypographyProps = {
   variant?:
+    | "h0"
     | "h1"
     | "h2"
     | "h3"

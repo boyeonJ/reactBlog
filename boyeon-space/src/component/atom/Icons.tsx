@@ -30,6 +30,7 @@ const Icons = ({
   name,
   size = "medium",
   color = "primary3",
+  style
 }: Props) => {
 
   console.log(color);
@@ -38,7 +39,7 @@ const Icons = ({
     <>
       <span
         className={className}
-        css={{ fontSize: iconSizes[size], color: colors[color]}}
+        css={{ fontSize: iconSizes[size], color: colors[color], ...style}}
       >
         {name}
       </span>

@@ -20,7 +20,7 @@ const Blog = () => {
           >
             <StyledTypography variant="h1">Blog</StyledTypography>
             <StyledTypography color="gray2">
-              기술을 기록합니다.(클린코드, 최적화, basic)
+              기술을 기록합니다.
             </StyledTypography>
           </FlexBox>
         </header>
