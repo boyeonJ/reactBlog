@@ -5,6 +5,7 @@ import Header from "./component/molecules/Header";
 import { Global } from "@emotion/react";
 import reset from "./reset";
 import colors from "./component/atom/foundation/Color";
+import Footer from "./component/molecules/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Outlet />
         </div>
       </main>
+      <Footer/>
     </>
   );
 }
