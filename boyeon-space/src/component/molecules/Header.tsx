@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <header
       css={{
-        height: "85px",
+        height: "90px",
       }}
     >
       <div
@@ -26,7 +26,7 @@ const Header = () => {
           position: "fixed",
           top: 0,
           width: "100%",
-          height: "85px",
+          height: "90px",
           borderBottom: `2px solid ${colors.gray1}`,
           padding: "1rem 2rem",
           boxSizing: "border-box",
@@ -47,13 +47,13 @@ const Header = () => {
             style={{
               [minq[1]]: {
                 display: "none",
-              },
+              }, 
             }}
           />
 
           <div css={{ display: "flex" }}>
-            <StyledTypography variant="h1B">보연</StyledTypography>
-            <StyledTypography variant="h1">공간</StyledTypography>
+            <StyledTypography variant="h0B">보연</StyledTypography>
+            <StyledTypography variant="h0" css={{lineHeight: '38px'}}>공간</StyledTypography>
           </div>
           {/* <img src="/src/assets/logo.png" css={{ height: "2rem" }} /> */}
 
@@ -76,17 +76,17 @@ const Header = () => {
             >
               <li>
                 <Link to={"blog"}>
-                  <StyledTypography variant="h1">BLOG</StyledTypography>
+                  <StyledTypography variant="h0">BLOG</StyledTypography>
                 </Link>
               </li>
               <li>
                 <Link to={"resume"}>
-                  <StyledTypography variant="h1">RESUME</StyledTypography>
+                  <StyledTypography variant="h0">RESUME</StyledTypography>
                 </Link>
               </li>
               <li>
                 <Link to={"book"}>
-                  <StyledTypography variant="h1">BOOK</StyledTypography>
+                  <StyledTypography variant="h0">BOOK</StyledTypography>
                 </Link>
               </li>
             </ul>
@@ -100,7 +100,10 @@ const Header = () => {
               }}
               onClick={() => setTheme("light" === theme ? "dark" : "light")}
             >
-              <Icons name="clear_night" size="large" />
+              <Icons
+                name={"light" === theme ? "clear_night" : "clear_day"}
+                size="large"
+              />
             </button>
           </div>
         </div>

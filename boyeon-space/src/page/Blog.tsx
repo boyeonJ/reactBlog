@@ -2,49 +2,51 @@
 import colors from "../component/atom/foundation/Color";
 import FlexBox from "../component/atom/FlexBox";
 import StyledTypography from "../component/atom/StyledTypography";
-
-const posts = [
-  {
-    title: "Lorem, ipsum.",
-    date: "2022년 11월 21일",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi modi labore ipsam, dolores iure veritatis nihil repudiandae autem vero! Adipisci, placeat magnam? Quia sit debitis consectetur id magni sed repellendus.",
-  },
-  {
-    title: "Lorem, ipsum. labore ipsam, dolores iure veritatis nihil r",
-    date: "20223년 11월 21일",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi modi labore ipsam, dolores iure veritatis nihil repudiandae autem vero! Adipisci, placeat magnam? Quia sit debitis consectetur id magni sed repellendus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi modi labore ipsam, dolores iure veritatis nihil repudiandae autem vero! Adipisci, placeat magnam? Quia sit debitis consectetur id magni sed repellendus.",
-  },
-  {
-    title: "Lorem",
-    date: "2025년 11월 21일",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi modi labore ipsam, dolores ",
-  },
-];
+import "highlight.js/styles/a11y-dark.css";
+import { posts } from "../posts/posts";
+import { Link } from "react-router-dom";
+import Icons from "../component/atom/Icons";
 
 const Blog = () => {
   return (
     <>
-      <section css={{ backgroundColor: colors.gray1, margin: "0 50px" }}>
+      <section>
         <header>
-          <FlexBox css={{borderBottom: `1px solid ${colors.gray2}`}}>
+          <FlexBox
+            css={{
+              borderBottom: `2px solid ${colors.gray1}`,
+              padding: "20px 0",
+            }}
+          >
             <StyledTypography variant="h1">Blog</StyledTypography>
             <StyledTypography color="gray2">
-              기술을 기록합니다.(클린코드, 최적화, basic)
+              기술을 기록합니다.
             </StyledTypography>
           </FlexBox>
         </header>
-        <article>
-          {posts.map((value) => (
-            <FlexBox css={{borderBottom: `1px solid ${colors.gray2}`}}>
-              <StyledTypography>{value.title}</StyledTypography>
-              <StyledTypography>{value.date}</StyledTypography>
-              <StyledTypography>{value.content}</StyledTypography>
-            </FlexBox>
-          ))}
-        </article>
+        {posts.map((value) => (
+          <article
+            css={{
+              borderBottom: `2px solid ${colors.gray1}`,
+              padding: "30px 20px",
+            }}
+          >
+            <Link to={`/detail/${value.id}`}>
+              <FlexBox css={{ gap: "10px" }}>
+                <StyledTypography variant="h1">{value.title}</StyledTypography>
+                <FlexBox direction="row" css={{gap: '5px'}}>
+                  <Icons size="medium" name="calendar_today" color="gray2"/>
+                  <StyledTypography variant="h2" color="gray2">
+                    {value.date}
+                  </StyledTypography>
+                </FlexBox>
+                <StyledTypography variant="h2" color="gray2">
+                  {value.description}
+                </StyledTypography>
+              </FlexBox>
+            </Link>
+          </article>
+        ))}
       </section>
     </>
   );

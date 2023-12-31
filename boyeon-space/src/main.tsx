@@ -5,6 +5,7 @@ import App from "./App";
 import Blog from "./page/Blog";
 import Resume from "./page/Resume";
 import Book from "./page/Book";
+import Detail from "./page/Detail";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "blog", element: <Blog /> },
+      { path: "detail/:id", element: <Detail /> },
       { path: "resume", element: <Resume /> },
       { path: "book", element: <Book /> },
     ],
