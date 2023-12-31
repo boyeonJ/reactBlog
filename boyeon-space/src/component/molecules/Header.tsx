@@ -100,7 +100,10 @@ const Header = () => {
               }}
               onClick={() => setTheme("light" === theme ? "dark" : "light")}
             >
-              <Icons name="clear_night" size="large" />
+              <Icons
+                name={"light" === theme ? "clear_night" : "clear_day"}
+                size="large"
+              />
             </button>
           </div>
         </div>

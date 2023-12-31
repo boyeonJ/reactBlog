@@ -11,7 +11,7 @@ function App() {
     <>
       <Global styles={reset} />
       <Header />
-      <main css={{ backgroundColor: colors.primary1 }}>
+      <main css={{ backgroundColor: colors.primary1, height: '100vh' }}>
         <div css={{ margin: "0 200px" }}>
           <Outlet />
         </div>

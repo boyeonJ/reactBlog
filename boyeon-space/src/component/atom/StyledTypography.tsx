@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import colors from "./foundation/Color";
-import { FoundationProps } from "../../util/type";
+import { ColorType, FoundationProps } from "../../util/type";
 import Typography from "./foundation/Typography";
 
 const sizeStyles = {
@@ -86,7 +86,7 @@ type TypographyProps = {
     | "h4B"
     | "h5B"
     | "h6B";
-  color?: "primary1" | "primary2" | "gray1" | "gray2" | "primary3";
+  color?: ColorType;
 };
 
 const StyledTypography = ({

@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { ColorType } from "../../util/type";
 import colors from "./foundation/Color";
 
 const iconSizes = {
@@ -13,7 +13,7 @@ type Props = {
   name:
     | "clear_night"
     | "clear_day"
-    | "account_circle"
+    | "calendar_today"
     | "search"
     | "menu"
     | "close"
@@ -22,17 +22,24 @@ type Props = {
     | "check";
   size?: "large" | "medium" | "small";
   style?: any;
+  color?: ColorType;
 };
 
 const Icons = ({
   className = "material-symbols-outlined",
   name,
   size = "medium",
-  style,
+  color = "primary3",
 }: Props) => {
+
+  console.log(color);
+  
   return (
     <>
-      <span className={className} css={{ fontSize: iconSizes[size], ...style, color:colors.primary3 }}>
+      <span
+        className={className}
+        css={{ fontSize: iconSizes[size], color: colors[color]}}
+      >
         {name}
       </span>
     </>
