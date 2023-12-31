@@ -1,17 +1,17 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-const defaultTheme = `
---light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
---dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
---max-width: 1170px;
---fixed-width: 620px;
---transition: all 0.3s linear;
---spacing: 0.1rem;
---radius: 0.25rem;
---ff-primary: "Roboto", sans-serif;
---ff-secondary: "Open Sans", sans-serif;
-`;
+// const defaultTheme = `
+// --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+// --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+// --max-width: 1170px;
+// --fixed-width: 620px;
+// --transition: all 0.3s linear;
+// --spacing: 0.1rem;
+// --radius: 0.25rem;
+// --ff-primary: "Roboto", sans-serif;
+// --ff-secondary: "Open Sans", sans-serif;
+// `;
 
 const lightTheme = `
 --clr-primary-1: #FFFFFF;
