@@ -31,6 +31,8 @@ const darkTheme = `
 `;
 
 const reset = css`
+  img[alt=mdx] { width: 500px }
+
   ::after,
   ::before {
     margin: 0;

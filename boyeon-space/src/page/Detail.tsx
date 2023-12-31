@@ -16,6 +16,11 @@ const Detail = () => {
     (value: Post) => value.id === Number(params.id)
   );
 
+  const customStyle = {
+    color: "blue",  // 원하는 폰트 컬러로 변경
+    // 다른 스타일 속성들도 추가할 수 있습니다.
+  };
+
   useEffect(() => {
     fetch(`../src/posts/${params.id}.md`)
       .then((response) => response.text())
@@ -36,7 +41,7 @@ const Detail = () => {
             </FlexBox>
           </FlexBox>
         </header>
-        <article css={{borderTop: `2px solid ${colors.gray1}`, paddingTop: '30px'}}>
+        <article css={{borderTop: `2px solid ${colors.gray1}`, paddingTop: '30px', color: colors.primary3}}>
           <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
             {markdown}
           </ReactMarkdown>
