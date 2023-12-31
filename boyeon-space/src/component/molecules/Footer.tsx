@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
 import FlexBox from "../atom/FlexBox";
-import Icons from "../atom/Icons";
 import StyledTypography from "../atom/StyledTypography";
 import colors from "../atom/foundation/Color";
 
