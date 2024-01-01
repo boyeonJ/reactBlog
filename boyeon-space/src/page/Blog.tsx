@@ -3,7 +3,7 @@ import colors from "../component/atom/foundation/Color";
 import FlexBox from "../component/atom/FlexBox";
 import StyledTypography from "../component/atom/StyledTypography";
 import "highlight.js/styles/a11y-dark.css";
-import { posts } from "../posts/posts";
+import { posts } from "../../public/posts/posts";
 import { Link } from "react-router-dom";
 import Icons from "../component/atom/Icons";
 
