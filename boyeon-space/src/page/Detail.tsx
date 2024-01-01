@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import StyledTypography from "../component/atom/StyledTypography";
-import { Post, posts } from "../posts/posts";
+import { Post, posts } from "../../public/posts/posts";
 import FlexBox from "../component/atom/FlexBox";
 import Icons from "../component/atom/Icons";
 import colors from "../component/atom/foundation/Color";
@@ -17,7 +17,7 @@ const Detail = () => {
   );
 
   useEffect(() => {
-    fetch(`../src/posts/${params.id}.md`)
+    fetch(`/posts/${params.id}.md`)
       .then((response) => response.text())
       .then((text) => setMarkdown(text));
   }, []);
