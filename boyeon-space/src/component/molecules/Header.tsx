@@ -46,7 +46,7 @@ const Header = () => {
           />
           <Logo />
           <NavBar />
-          <HeaderRight setTheme theme/>
+          <HeaderRight setTheme={setTheme} theme={theme}/>
         </FlexBox>
       </FixedBox>
     </header>
