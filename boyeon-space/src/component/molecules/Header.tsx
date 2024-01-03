@@ -3,20 +3,24 @@ import { css } from "@emotion/react";
 import { useEffect, useState } from "react";
 import { maxq, minq } from "../../util/style.ts";
 import colors from "../atom/foundation/Color.tsx";
-import Icons from "../atom/Icons";
+import Icon from "../atom/Icon.tsx";
+import IconButton from "../atom/IconButton.tsx";
 import StyledTypography from "../atom/StyledTypography.tsx";
 import { Link } from "react-router-dom";
 import FlexBox from "../atom/FlexBox.tsx";
 import FixedBox from "../atom/FixedBox.tsx";
 
-const headerStyle = {
+const headerStyle: {
+  height: any;
+  container: any;
+} = {
   height: css({ height: "90px" }),
   container: css({
     top: 0,
     padding: "1rem 2rem",
     backgroundColor: colors.primary1,
     borderBottom: `2px solid ${colors.gray1}`,
-  }),
+  })
 };
 
 const navStyle = {
@@ -50,7 +54,7 @@ const Header = () => {
 const HeaderLeft = () => {
   return (
     <>
-      <Icons
+      <Icon
         name="menu"
         size="large"
         style={{
@@ -104,18 +108,9 @@ const NavBar = () => {
 const HeaderRight = ({ setTheme, theme }: any) => {
   return (
     <div>
-      <button
-        css={{
-          backgroundColor: "transparent",
-          borderColor: "transparent",
-        }}
-        onClick={() => setTheme("light" === theme ? "dark" : "light")}
-      >
-        <Icons
-          name={"light" === theme ? "clear_night" : "clear_day"}
-          size="large"
-        />
-      </button>
+      <IconButton onClick={() => setTheme("light" === theme ? "dark" : "light")} name={"light" === theme ? "clear_night" : "clear_day"}
+          size="large"/>
+  
     </div>
   );
 };

@@ -6,7 +6,7 @@ import rehypeHighlight from "rehype-highlight";
 import StyledTypography from "../component/atom/StyledTypography";
 import { Post, posts } from "../../public/posts/posts";
 import FlexBox from "../component/atom/FlexBox";
-import Icons from "../component/atom/Icons";
+import Icons from "../component/atom/Icon";
 import colors from "../component/atom/foundation/Color";
 
 const Detail = () => {
