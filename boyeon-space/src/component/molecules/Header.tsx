@@ -20,7 +20,7 @@ const headerStyle: {
     padding: "1rem 2rem",
     backgroundColor: colors.primary1,
     borderBottom: `2px solid ${colors.gray1}`,
-  })
+  }),
 };
 
 const navStyle = {
@@ -84,21 +84,13 @@ const NavBar = () => {
     >
       <ul css={navStyle.li}>
         <FlexBox direction="row">
-          <li>
-            <Link to={"blog"}>
-              <StyledTypography variant="h0">BLOG</StyledTypography>
-            </Link>
-          </li>
-          <li>
-            <Link to={"resume"}>
-              <StyledTypography variant="h0">RESUME</StyledTypography>
-            </Link>
-          </li>
-          <li>
-            {/* <Link to={"book"}>
-          <StyledTypography variant="h0">BOOK</StyledTypography>
-        </Link> */}
-          </li>
+          {["blog", "resume"].map((value: string) => (
+            <li key={value}>
+              <Link to={value}>
+                <StyledTypography variant="h0">{value.toUpperCase()}</StyledTypography>
+              </Link>
+            </li>
+          ))}
         </FlexBox>
       </ul>
     </nav>
@@ -108,9 +100,11 @@ const NavBar = () => {
 const HeaderRight = ({ setTheme, theme }: any) => {
   return (
     <div>
-      <IconButton onClick={() => setTheme("light" === theme ? "dark" : "light")} name={"light" === theme ? "clear_night" : "clear_day"}
-          size="large"/>
-  
+      <IconButton
+        onClick={() => setTheme("light" === theme ? "dark" : "light")}
+        name={"light" === theme ? "clear_night" : "clear_day"}
+        size="large"
+      />
     </div>
   );
 };
