@@ -7,7 +7,7 @@ import { Global } from "@emotion/react";
 import reset from "./reset";
 import colors from "./component/atom/foundation/Color";
 import Footer from "./component/molecules/Footer";
-import { minq, maxq } from "./util/style";
+import { maxq } from "./util/style";
 
 function App() {
   return (
