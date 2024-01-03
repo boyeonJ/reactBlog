@@ -11,7 +11,7 @@ const Button = ({ className, children, onClick }: FoundationProps & ButtonProps)
 
 export const LargeButton = ({ className, children, onClick }: FoundationProps & ButtonProps) => {
   return (
-    <Button className={className} css={{ fontSize: "1.5rem" }}>
+    <Button className={className} onClick={onClick} css={{ fontSize: "1.5rem" }}>
       {children}
     </Button>
   );
