@@ -89,7 +89,7 @@ const Resume = () => {
             borderTop: `2px solid ${colors.gray1}`,
           }}>
             {[1, 2, 3, 4, 5, 6, 7].map(value => (
-              <article css={{
+              <article key={value} css={{
                 display: "grid",
                 gridTemplateColumns: "10% 90%",
                 borderBottom: `1px solid ${colors.gray1}`,
@@ -111,7 +111,7 @@ const Resume = () => {
             borderTop: `2px solid ${colors.gray1}`,
           }}>
             {[1, 2, 3, 4, 5, 6, 7].map(value => (
-              <article css={{
+              <article key={value} css={{
                 display: "grid",
                 gridTemplateColumns: "10% 90%",
                 borderBottom: `1px solid ${colors.gray1}`,
