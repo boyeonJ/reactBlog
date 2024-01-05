@@ -4,19 +4,21 @@ import { css } from "@emotion/react";
 import FlexBox from "../atom/FlexBox";
 import StyledTypography from "../atom/StyledTypography";
 import colors from "../atom/foundation/Color";
+import { maxq } from "../../util/style";
 
 const skillStyle = {
   title: css({ paddingBottom: "10px", display: "inline-block" }),
   layout: css({
     borderTop: `2px solid ${colors.gray1}`,
-    article: {
-      display: "grid",
-      gridTemplateColumns: "15% 85%",
-      borderBottom: `1px solid ${colors.gray1}`,
-      width: "100%",
-      padding: "10px",
-    },
   }),
+  article: css({
+    borderBottom: `1px solid ${colors.gray1}`,
+    width: "100%",
+    padding: "10px",
+  }),
+  articleMax: css({ [maxq[2]]: { flexDirection: "column" } }),
+  name: css({ display: "inline-block", width: "20%" }),
+  description: css({ maxWidth: '80%'}),
 };
 
 const skills = [
@@ -61,15 +63,19 @@ const Skill = () => {
       </StyledTypography>
       <FlexBox css={skillStyle.layout}>
         {skills.map((skill) => (
-          <article key={skill.name}>
-            <StyledTypography variant="h2">{skill.name}</StyledTypography>
-            <ul>
-              {skill.descriptions.map((description) => (
-                <li key={description}>
-                  <StyledTypography>{description}</StyledTypography>
-                </li>
-              ))}
-            </ul>
+          <article key={skill.name} css={skillStyle.article}>
+            <FlexBox css={skillStyle.articleMax} direction="row">
+              <StyledTypography variant="h2" css={skillStyle.name}>
+                {skill.name}
+              </StyledTypography>
+              <ul css={skillStyle.description}>
+                {skill.descriptions.map((description) => (
+                  <li key={description}>
+                    <StyledTypography>{description}</StyledTypography>
+                  </li>
+                ))}
+              </ul>
+            </FlexBox>
           </article>
         ))}
       </FlexBox>
