@@ -2,13 +2,13 @@
 import { ColorType } from "../../util/type";
 import colors from "./foundation/Color";
 
-const iconSizes = {
+export const iconSizes = {
   large: "2rem",
   medium: "1rem",
   small: "0.5rem",
 };
 
-type Props = {
+export type IconProps = {
   className?: string;
   name:
     | "clear_night"
@@ -21,25 +21,23 @@ type Props = {
     | "favorite"
     | "check";
   size?: "large" | "medium" | "small";
-  style?: any;
   color?: ColorType;
+  style?: any
 };
 
-const Icons = ({
+const Icon = ({
   className = "material-symbols-outlined",
   name,
   size = "medium",
   color = "primary3",
   style
-}: Props) => {
+}: IconProps) => {
 
-  console.log(color);
-  
   return (
     <>
       <span
         className={className}
-        css={{ fontSize: iconSizes[size], color: colors[color], ...style}}
+        css={{ fontSize: iconSizes[size], color: colors[color], ...style }}
       >
         {name}
       </span>
@@ -47,4 +45,4 @@ const Icons = ({
   );
 };
 
-export default Icons;
+export default Icon;

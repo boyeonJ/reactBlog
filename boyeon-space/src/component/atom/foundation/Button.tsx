@@ -1,13 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import { FoundationProps } from "../../../util/type";
 
-  
-const Button = ({className, children}:FoundationProps) => {
-    return <button className={className}>{children}</button>
-}
+export type ButtonProps = {
+  onClick?: React.MouseEventHandler<HTMLElement>;
+};
 
-export const LargeButton = ({className, children}:FoundationProps) => {
-    return <Button className={className} css={{fontSize: '1.5rem'}}>{children}</Button>
-}
+const Button = ({ className, children, onClick }: FoundationProps & ButtonProps) => {
+  return <button onClick={onClick} className={className}>{children}</button>;
+};
+
+export const LargeButton = ({ className, children, onClick }: FoundationProps & ButtonProps) => {
+  return (
+    <Button className={className} onClick={onClick} css={{ fontSize: "1.5rem" }}>
+      {children}
+    </Button>
+  );
+};
 
 export default Button;

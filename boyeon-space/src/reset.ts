@@ -31,8 +31,14 @@ const darkTheme = `
 `;
 
 const reset = css`
-  img[alt=mdx] { width: 500px }
-
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  img[alt="mdx"] {
+    width: 500px;
+  }
   ::after,
   ::before {
     margin: 0;
@@ -52,11 +58,11 @@ const reset = css`
   a {
     text-decoration: none;
   }
-  body[data-theme='light'] {
+  body[data-theme="light"] {
     ${lightTheme};
   }
-  
-  body[data-theme='dark'] {
+
+  body[data-theme="dark"] {
     ${darkTheme};
   }
 `;

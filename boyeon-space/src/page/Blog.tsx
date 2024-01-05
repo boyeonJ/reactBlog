@@ -5,7 +5,7 @@ import StyledTypography from "../component/atom/StyledTypography";
 import "highlight.js/styles/a11y-dark.css";
 import { posts } from "../../public/posts/posts";
 import { Link } from "react-router-dom";
-import Icons from "../component/atom/Icons";
+import Icons from "../component/atom/Icon";
 
 const Blog = () => {
   return (
@@ -26,6 +26,7 @@ const Blog = () => {
         </header>
         {posts.map((value) => (
           <article
+            key={value.id}
             css={{
               borderBottom: `2px solid ${colors.gray1}`,
               padding: "30px 20px",
@@ -34,8 +35,8 @@ const Blog = () => {
             <Link to={`/detail/${value.id}`}>
               <FlexBox css={{ gap: "10px" }}>
                 <StyledTypography variant="h1">{value.title}</StyledTypography>
-                <FlexBox direction="row" css={{gap: '5px'}}>
-                  <Icons size="medium" name="calendar_today" color="gray2"/>
+                <FlexBox direction="row" css={{ gap: "5px" }}>
+                  <Icons size="medium" name="calendar_today" color="gray2" />
                   <StyledTypography variant="h2" color="gray2">
                     {value.date}
                   </StyledTypography>
