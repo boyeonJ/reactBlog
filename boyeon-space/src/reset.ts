@@ -50,10 +50,7 @@ const reset = css`
     margin: 0;
     ${lightTheme}
   }
-  ul,
-  li {
-    margin: 0;
-    padding: 0;
+  ul {
     list-style-type: none;
   }
   a {
