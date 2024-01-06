@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { FoundationProps } from "../../util/type";
+import { FoundationProps } from "../../utils/types";
 
 const FixedBox = ({
   children,

@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { useEffect, useState } from "react";
-import { maxq, minq } from "../../util/style.ts";
-import colors from "../atom/foundation/Color.tsx";
+import { maxq, minq } from "../../utils/styles.ts";
 import Icon from "../atom/Icon.tsx";
 import IconButton from "../atom/IconButton.tsx";
 import StyledTypography from "../atom/StyledTypography.tsx";
 import { Link } from "react-router-dom";
 import FlexBox from "../atom/FlexBox.tsx";
 import FixedBox from "../atom/FixedBox.tsx";
+import colors from "../atom/foundation/Color.ts";
 
 const headerStyle: {
   height: any;
@@ -87,7 +87,7 @@ const NavBar = () => {
           {["blog", "resume"].map((value: string) => (
             <li key={value}>
               <Link to={value}>
-                <StyledTypography variant="h0">{value.toUpperCase()}</StyledTypography>
+                <StyledTypography variant="h0" >{value.toUpperCase()}</StyledTypography>
               </Link>
             </li>
           ))}

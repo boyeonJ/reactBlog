@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { FoundationProps } from "../../util/type";
+import { FoundationProps } from "../../utils/types";
 
 type FlexBoxProps = {
   //row - justify(justify-content): 가로, align(align-items): 세로

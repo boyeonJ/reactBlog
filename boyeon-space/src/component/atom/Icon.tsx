@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { ColorType } from "../../util/type";
+import { ColorType } from "../../utils/types";
 import colors from "./foundation/Color";
 
 export const iconSizes = {

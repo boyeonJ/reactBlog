@@ -4,7 +4,7 @@ import { css } from "@emotion/react";
 import FlexBox from "../atom/FlexBox";
 import StyledTypography from "../atom/StyledTypography";
 import colors from "../atom/foundation/Color";
-import { maxq } from "../../util/style";
+import { maxq } from "../../utils/styles";
 
 const skillStyle = {
   title: css({ paddingBottom: "10px", display: "inline-block" }),

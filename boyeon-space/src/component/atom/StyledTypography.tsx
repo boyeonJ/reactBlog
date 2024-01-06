@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import colors from "./foundation/Color";
-import { ColorType, FoundationProps } from "../../util/type";
+import { ColorType, FoundationProps } from "../../utils/types";
 import Typography from "./foundation/Typography";
 
 const sizeStyles = {
